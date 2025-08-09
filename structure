@@ -1,0 +1,96 @@
+backend/
+├── src/
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── userController.js
+│   │   ├── postController.js
+│   │   ├── commentController.js
+│   │   └── friendshipController.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Post.js
+│   │   ├── Comment.js
+│   │   └── Friendship.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── users.js
+│   │   ├── posts.js
+│   │   ├── comments.js
+│   │   └── friendships.js
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   ├── validation.js
+│   │   └── upload.js
+│   ├── config/
+│   │   ├── database.js
+│   │   └── jwt.js
+│   └── utils/
+│       ├── passwordHash.js
+│       └── validation.js
+├── uploads/
+├── .env
+├── .gitignore
+├── package.json
+└── server.js
+
+frontend/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Header.js
+│   │   │   ├── Footer.js
+│   │   │   ├── Loading.js
+│   │   │   └── ErrorMessage.js
+│   │   ├── auth/
+│   │   │   ├── Login.js
+│   │   │   ├── Register.js
+│   │   │   └── ProtectedRoute.js
+│   │   ├── posts/
+│   │   │   ├── PostList.js
+│   │   │   ├── PostCard.js
+│   │   │   ├── CreatePost.js
+│   │   │   └── EditPost.js
+│   │   ├── comments/
+│   │   │   ├── CommentList.js
+│   │   │   ├── CommentCard.js
+│   │   │   └── CreateComment.js
+│   │   ├── profile/
+│   │   │   ├── Profile.js
+│   │   │   ├── EditProfile.js
+│   │   │   └── UserPosts.js
+│   │   └── friends/
+│   │       ├── FriendsList.js
+│   │       ├── FriendRequests.js
+│   │       └── AddFriend.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── Login.js
+│   │   ├── Register.js
+│   │   ├── Profile.js
+│   │   └── NotFound.js
+│   ├── services/
+│   │   ├── api.js
+│   │   ├── authService.js
+│   │   ├── postService.js
+│   │   ├── commentService.js
+│   │   └── userService.js
+│   ├── context/
+│   │   ├── AuthContext.js
+│   │   └── PostContext.js
+│   ├── hooks/
+│   │   ├── useAuth.js
+│   │   └── usePosts.js
+│   ├── utils/
+│   │   ├── constants.js
+│   │   ├── helpers.js
+│   │   └── validation.js
+│   ├── styles/
+│   │   ├── globals.css
+│   │   └── components/
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── .env
