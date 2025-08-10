@@ -1,0 +1,191 @@
+:root {
+  --primary-color: #1877f2;
+  --primary-hover: #166fe5;
+  --bg-light: #ffffff;
+  --bg-dark: #1f2937;
+  --text-light: #1c1e21;
+  --text-dark: #f9fafb;
+  --muted-light: #65676b;
+  --muted-dark: #d1d5db;
+  --border-light: #e1e5e9;
+  --border-dark: #374151;
+}
+
+[data-theme='light'] {
+  --bg-color: var(--bg-light);
+  --text-color: var(--text-light);
+  --text-muted: var(--muted-light);
+  --border-color: var(--border-light);
+}
+
+[data-theme='dark'] {
+  --bg-color: var(--bg-dark);
+  --text-color: var(--text-dark);
+  --text-muted: var(--muted-dark);
+  --border-color: var(--border-dark);
+}
+
+/* Modifications dans votre fichier CSS */
+.header {
+  height: 60px; /* Hauteur fixe réduite */
+  padding: 0 1rem; /* Padding horizontal réduit */
+}
+
+.header-container {
+  height: 100%; /* Prend toute la hauteur du header */
+}
+
+.logo {
+  font-size: 1.25rem; /* Taille de police réduite */
+}
+
+.nav-link {
+  padding: 0.3rem 0.5rem; /* Padding réduit */
+}
+
+.header-profile-pic, 
+.header-profile-placeholder {
+  width: 32px; /* Taille réduite */
+  height: 32px; /* Taille réduite */
+  font-size: 0.8rem; /* Taille texte réduite */
+}
+
+.user-greeting {
+  font-size: 0.75rem; /* Taille texte réduite */
+}
+
+.logout-btn, 
+.refresh-btn, 
+.theme-toggle-btn {
+  padding: 0.3rem 0.6rem; /* Padding réduit */
+  font-size: 0.75rem; /* Taille texte réduite */
+}
+
+.theme-toggle-btn {
+  width: 32px; /* Taille réduite */
+  height: 32px; /* Taille réduite */
+}
+
+/* Ajustements responsive */
+@media (max-width: 768px) {
+  .header {
+    height: 50px; /* Encore plus compact sur mobile */
+    padding: 0 0.5rem;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+  }
+  
+  .nav-link {
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.header-profile-pic, .header-profile-placeholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.user-greeting {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.logout-btn, .refresh-btn, .theme-toggle-btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.logout-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.logout-btn:hover {
+  background: #b91c1c;
+}
+
+.refresh-btn {
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.refresh-icon.spinning {
+  animation: spin 1s linear infinite;
+}
+
+.theme-toggle-btn {
+  border: 2px solid var(--border-color);
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--border-color);
+  border-color: var(--primary-color);
+}
+
+/* Animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .refresh-text,
+  .user-greeting {
+    display: none;
+  }
+
+  .refresh-icon {
+    font-size: 1.25rem;
+  }
+
+  .header {
+    padding: 0.75rem 1rem;
+  }
+}

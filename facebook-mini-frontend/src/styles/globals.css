@@ -1,0 +1,218 @@
+/* globals.css - Variables CSS et styles de base */
+
+:root {
+  /* Couleurs principales */
+  --primary-color: #1877f2;
+  --primary-hover: #166fe5;
+  --bg-light: #ffffff;
+  --bg-dark: #1f2937;
+  --text-light: #1c1e21;
+  --text-dark: #f9fafb;
+  --muted-light: #65676b;
+  --muted-dark: #d1d5db;
+  --border-light: #e1e5e9;
+  --border-dark: #374151;
+  
+  /* Couleurs Facebook additionnelles */
+  --fb-blue: #1877f2;
+  --fb-blue-dark: #166fe5;
+  --fb-green: #36a420;
+  --fb-red: #dc2626;
+  --fb-red-hover: #b91c1c;
+  --fb-gray-100: #f0f2f5;
+  --fb-gray-200: #e4e6ea;
+  --fb-gray-300: #d0d2d7;
+  --fb-gray-800: #1c1e21;
+  --fb-white: #ffffff;
+  
+  /* Espacements */
+  --spacing-xs: 0.25rem;  /* 4px */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2rem;     /* 32px */
+  
+  /* Bordures */
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 12px;
+  --border-radius-full: 50%;
+  
+  /* Ombres */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Tailles */
+  --header-height: 60px;
+  --header-height-mobile: 50px;
+  --profile-pic-sm: 32px;
+  --profile-pic-md: 36px;
+  --profile-pic-lg: 40px;
+}
+
+/* Thèmes */
+[data-theme='light'] {
+  --bg-color: var(--bg-light);
+  --text-color: var(--text-light);
+  --text-muted: var(--muted-light);
+  --border-color: var(--border-light);
+}
+
+[data-theme='dark'] {
+  --bg-color: var(--bg-dark);
+  --text-color: var(--text-dark);
+  --text-muted: var(--muted-dark);
+  --border-color: var(--border-dark);
+}
+
+/* Reset et base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Classes utilitaires globales */
+.util-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.util-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.util-flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.util-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.util-text-center { text-align: center; }
+.util-text-left { text-align: left; }
+.util-text-right { text-align: right; }
+
+/* Marges utilitaires */
+.util-mb-xs { margin-bottom: var(--spacing-xs); }
+.util-mb-sm { margin-bottom: var(--spacing-sm); }
+.util-mb-md { margin-bottom: var(--spacing-md); }
+.util-mb-lg { margin-bottom: var(--spacing-lg); }
+.util-mb-xl { margin-bottom: var(--spacing-xl); }
+
+.util-mt-xs { margin-top: var(--spacing-xs); }
+.util-mt-sm { margin-top: var(--spacing-sm); }
+.util-mt-md { margin-top: var(--spacing-md); }
+.util-mt-lg { margin-top: var(--spacing-lg); }
+.util-mt-xl { margin-top: var(--spacing-xl); }
+
+/* Padding utilitaires */
+.util-p-xs { padding: var(--spacing-xs); }
+.util-p-sm { padding: var(--spacing-sm); }
+.util-p-md { padding: var(--spacing-md); }
+.util-p-lg { padding: var(--spacing-lg); }
+.util-p-xl { padding: var(--spacing-xl); }
+
+/* Classes de boutons réutilisables */
+.util-btn-base {
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+}
+
+.util-btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.util-btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.util-btn-danger {
+  background: var(--fb-red);
+  color: white;
+}
+
+.util-btn-danger:hover:not(:disabled) {
+  background: var(--fb-red-hover);
+}
+
+.util-btn-secondary {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.util-btn-secondary:hover:not(:disabled) {
+  background: var(--border-color);
+  border-color: var(--primary-color);
+}
+
+.util-btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Animations globales */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.util-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.util-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsive utilitaires */
+.util-hide-mobile {
+  display: block;
+}
+
+.util-show-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .util-hide-mobile {
+    display: none;
+  }
+  
+  .util-show-mobile {
+    display: block;
+  }
+}
